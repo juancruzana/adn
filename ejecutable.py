@@ -34,11 +34,19 @@ def mutar(adn: list) -> list:
     
     if opcion in [1, 2]:
         mutante = Radiacion()
-        adn = mutante.crear_mutante(adn, base, opcion)
+        print("Mutante Horizontal") if opcion == 1 else print("Mutante Vertical")
+        mutante.mostrar_coordenadas()
+        posicion_inicial = input("Ingrese la coordenada inicial (Fila, Columna. Ej: 21): ")
+        adn = mutante.crear_mutante(adn, opcion, base, posicion_inicial)
     else:
         sentido = verificar_opciones("\n¿En qué sentido desea la mutación diagonal?\nAscendente: 1 | Descendente: 2\n: ", ("1", "2"), 1)
+        print("Mutante Ascendente") if sentido == 1 else print("Mutante Descendente")
         mutante = Viruz()
-        adn = mutante.crear_mutante(adn, base, sentido)
+        mutante.mostrar_coordenadas(sentido)
+        mutante.fila()
+        posicion_inicial = input("Ingrese la coordenada inicial (Fila, Columna. Ej: 21): ")
+
+        adn = mutante.crear_mutante(adn, base, posicion_inicial)
 
     imprimir_secuencia(adn)
     return adn
@@ -96,10 +104,16 @@ while True:
 
         # Verifica si el usuario desea continuar con la misma secuencia de ADN
         continuar = verificar_opciones("¿Desea seguir usando esta secuencia de ADN?\nSí: 1 | No: 2\n: ", ("1", "2"), 1)
-        if continuar == 2:
+        if continuar == 1:
+            limpiar_consola()# Llamada a la función
+            print("\nEsta es la secuencia de ADN que esta usando")
+            imprimir_secuencia(adn)# Llamada a la función
+        else:
             break
 
     # Verifica si el usuario desea salir del programa
     salir = verificar_opciones("¿Desea salir del programa?\nSí: 1 | No: 2\n: ", ("1", "2"), 1)
     if salir == 1:
         break
+    else:
+        limpiar_consola()

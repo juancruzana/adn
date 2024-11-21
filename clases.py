@@ -218,7 +218,7 @@ class Viruz(Mutador):
                 print(f"\nError: {error}. Intente nuevamente.")
                 control = True
                 sentido = self.sentido # Esto es muy importante, es redundante pero con esto se asegura que las coordenadas sean las correctas
-                self.mostrar_coordenadas()
+                self.mostrar_coordenadas(sentido)
                 print(self.secuencia)
             except IndexError:
                 self.limpiar_consola()

@@ -31,6 +31,7 @@ class Sanador(Detector):
             print("\nLa secuencia de ADN no contiene mutaciones")
             return self.adn
 
+
 class Mutador:
     # Clase base para mutar la matriz de ADN, utilizada por subclases.
 

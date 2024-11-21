@@ -26,3 +26,4 @@ class Mutador:
     def limpiar_consola(self) -> None:
         # Limpia la consola según el sistema operativo.
         os.system('cls' if os.name == 'nt' else 'clear')
+

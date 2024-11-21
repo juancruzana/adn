@@ -1,4 +1,3 @@
-
 class Radiacion(Mutador):
     # Subclase que muta la matriz en sentido horizontal o vertical.
     def __init__(self) -> None:# Inicializa el método contructor de la superclase

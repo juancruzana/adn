@@ -93,7 +93,7 @@ class Radiacion(Mutador):
                 print("\nError: Fuera de rango de la matriz | RECUERDE: la base se repite 4 veces dentro del rango de la fila")
                 control = True
                 self.mostrar_coordenadas()
-                
+
 class Viruz(Mutador):
     # Subclase que muta la matriz en sentido diagonal (ascendente o descendente).
     def __init__(self) -> None:# Inicializa el método contructor de la superclase
